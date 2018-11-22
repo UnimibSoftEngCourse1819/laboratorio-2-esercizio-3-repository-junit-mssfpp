@@ -23,6 +23,26 @@ import org.junit.internal.InexactComparisonCriteria;
  * @since 4.0
  */
 public class Assert {
+    
+    public static  void assertGreaterThan(int o1, int o2) {
+        if(o1 < o2) fail("assert greater then fallita");
+    }
+    
+    public static void assertGreaterThan(float o1, float o2) {
+        if(o1 < o2) fail("assert greater then fallita");
+    }
+    
+    public static void assertGreaterThan(double o1, double o2) {
+        if(o1 < o2) fail("assert greater then fallita");
+    }
+    
+    public static void assertGreaterThan(char o1, char o2) {
+        if(o1 < o2) fail("assert greater then fallita");
+    }
+    
+    public static void assertGreaterThan(long o1, long o2) {
+        if(o1 < o2) fail("assert greater then fallita");
+    }
     /**
      * Protect constructor since it is a static only class
      */
