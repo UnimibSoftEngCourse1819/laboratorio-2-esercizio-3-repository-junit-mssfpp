@@ -5,6 +5,7 @@ import static org.hamcrest.CoreMatchers.instanceOf;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertGreaterThan;
 import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertNotSame;
 import static org.junit.Assert.assertNull;
@@ -16,6 +17,7 @@ import static org.junit.Assert.fail;
 
 import java.io.IOException;
 import java.math.BigDecimal;
+import java.util.Comparator;
 
 import org.junit.Assert;
 import org.junit.ComparisonFailure;
@@ -27,6 +29,26 @@ import org.junit.internal.ArrayComparisonFailure;
  * Tests for {@link org.junit.Assert}
  */
 public class AssertionTest {
+    
+    public void greaterThan(){
+        Object o = new Object();
+        
+        
+          assertGreaterThan(o, o, new Comparator<Object>(){
+              @Override
+              public int compare(Object o1, Object o2) {
+                  return 1;
+              }
+          });
+
+          assertGreaterThan("zzzz", "aaaa", new Comparator<String>() {
+              @Override
+              public int compare(String o1, String o2) {
+                  return o1.compareTo(o2);
+              }
+          });
+      }
+    
 // If you want to use 1.4 assertions, they will be reported correctly.
 // However, you need to add the -ea VM argument when running.
 
