@@ -5,6 +5,7 @@ import static org.hamcrest.CoreMatchers.instanceOf;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertGreaterThan;
 import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertNotSame;
 import static org.junit.Assert.assertNull;
@@ -27,6 +28,18 @@ import org.junit.internal.ArrayComparisonFailure;
  * Tests for {@link org.junit.Assert}
  */
 public class AssertionTest {
+
+    public void greaterThan(){
+        
+        
+        assertGreaterThan('b', 'a');
+        assertGreaterThan(2, 1);
+        assertGreaterThan(3l, 2l);
+        assertGreaterThan(2.4d, 1.2d);
+        assertGreaterThan(4.0, 1.9);
+
+      }
+    
 // If you want to use 1.4 assertions, they will be reported correctly.
 // However, you need to add the -ea VM argument when running.
 
