@@ -43,6 +43,11 @@ public class Assert {
     public static void assertGreaterThan(long o1, long o2) {
         if(o1 < o2) fail("assert greater then fallita");
     }
+    
+    public static <T> void assertGreaterThan(T o1, T o2, java.util.Comparator<T> comparator) {
+        comparator.compare(o1, o2);
+    }
+    
     /**
      * Protect constructor since it is a static only class
      */

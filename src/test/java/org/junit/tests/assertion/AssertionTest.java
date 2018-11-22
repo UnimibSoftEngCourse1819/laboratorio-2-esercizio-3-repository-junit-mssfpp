@@ -17,6 +17,7 @@ import static org.junit.Assert.fail;
 
 import java.io.IOException;
 import java.math.BigDecimal;
+import java.util.Comparator;
 
 import org.junit.Assert;
 import org.junit.ComparisonFailure;
@@ -29,6 +30,7 @@ import org.junit.internal.ArrayComparisonFailure;
  */
 public class AssertionTest {
 
+
     public void greaterThan(){
         
         
@@ -38,6 +40,22 @@ public class AssertionTest {
         assertGreaterThan(2.4d, 1.2d);
         assertGreaterThan(4.0, 1.9);
 
+        Object o = new Object();
+        
+        
+          assertGreaterThan(o, o, new Comparator<Object>(){
+              @Override
+              public int compare(Object o1, Object o2) {
+                  return 1;
+              }
+          });
+
+          assertGreaterThan("zzzz", "aaaa", new Comparator<String>() {
+              @Override
+              public int compare(String o1, String o2) {
+                  return o1.compareTo(o2);
+              }
+          });
       }
     
 // If you want to use 1.4 assertions, they will be reported correctly.
